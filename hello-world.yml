@@ -5,10 +5,10 @@ resources:
           uri: https://github.com/ginoburdea/concurse-ci-testing
 
 jobs:
-    - get: repo
-      trigger: true
     - name: hello-world-job
       plan:
+          - get: repo
+            trigger: true
           - task: hello-world-task
             config:
                 platform: linux
